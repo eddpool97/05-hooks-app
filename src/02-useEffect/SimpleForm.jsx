@@ -1,3 +1,5 @@
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable no-undef */
 import { useEffect, useState } from 'react';
 import { Message } from './Message';
 

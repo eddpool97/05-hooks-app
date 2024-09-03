@@ -1,17 +1,19 @@
+/* eslint-disable no-unused-vars */
 import { useEffect } from 'react';
 import { useForm } from '../hooks/useForm';
 
 export const FormWithCustomHook = () => {
 
-
-    const { formState, onInputChange } = useForm({
+    const initialFormValue = {
         username: '',
         email: '',
         password: ''
-    });
+    };
+
+
+    const { formState, onInputChange, onResetForm } = useForm(initialFormValue);
 
     const { username, email, password} = formState;
-
 
     return (
         <>
@@ -45,7 +47,11 @@ export const FormWithCustomHook = () => {
                 onChange={ onInputChange }
             />
 
-
+            <button
+                onClick={ onResetForm } 
+                className='btn btn-primary mt-4'>
+                Reset
+            </button>
         </>
   );
 }
